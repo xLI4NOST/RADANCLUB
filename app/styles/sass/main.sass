@@ -1,0 +1,1888 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+@import 'blocks/**/*'
+
+body
+  background-color: #160F1E
+
+.header
+  overflow: hidden
+  position: relative
+  //background-image: url("../../images/dist/image 2825.png")
+  width: 100%
+  display: flex
+  align-content: center
+  align-items: center
+  flex-direction: column
+  //height: 941px
+  img
+    height: 100%
+    background-size: cover
+.header_under-line
+  position: relative
+  z-index: 3
+  margin-top: -35px
+.header-info
+  min-width: 50%
+  display: flex
+  flex-direction: column
+  gap: 10px
+  margin-top: 80px
+  max-width: 594px
+.header_title
+  max-width: 594px
+  color: #FFF
+  text-align: center
+  font-family: Steelfish
+  font-size: 129.891px
+  font-style: normal
+  font-weight: 800
+  line-height: 146.167px
+  text-transform: uppercase
+  span
+    color: #8553E3
+    font-family: Steelfish
+    font-size: 124.367px
+    font-style: normal
+    font-weight: 400
+    line-height: 146.167px
+    text-transform: uppercase
+.header_subtitle
+  color: #DBDBDB
+  font-family: Manrope
+  font-size: 18px
+  font-style: normal
+  font-weight: 400
+  line-height: 33.287px
+  text-align: center
+  span
+    color: #FFF
+    text-align: center
+    font-family: Manrope
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 33.125px
+
+.header_main-content
+  position: absolute
+  z-index: 1
+  max-width: 1240px
+  display: flex
+  flex-direction: row
+
+.numbers
+  display: flex
+  flex-direction: row
+  justify-content: center
+  gap: 80px
+
+
+.numbers-block
+  h2
+    margin: 0
+    color: #8E52FF
+    font-family: Steelfish
+    font-size: 106.633px
+    font-style: normal
+    font-weight: 800
+    line-height: 119.994px
+    text-transform: uppercase
+  p
+    margin: 0
+    text-align: center
+    color: #BA95FF
+    font-family: Manrope
+    font-size: 15px
+    font-style: normal
+    font-weight: 400
+    line-height: 23.3px
+.header_link
+  white-space: nowrap
+  max-height: 64px
+  margin-top: 40px
+  align-self: center
+  display: block
+  max-width: 280px
+  text-decoration: none
+  padding: 10px 15px 15px
+  background-color: #8553E3
+  color: #FFF
+  font-family: Steelfish
+  font-size: 34.772px
+  font-style: normal
+  font-weight: 800
+  line-height: 39.129px
+  text-transform: uppercase
+
+.header_photo-block
+  position: relative
+
+.header_main-photo
+  margin-left: -25%
+
+.header_low-screen-block
+  display: flex
+  flex-direction: column
+  gap: 14px
+  position: absolute
+  top: -70px
+  right: 44%
+  img
+    height: 194px
+.header_main-photo-1200
+  display: none
+@media screen and (max-width: 1280px)
+  .header_main-photo
+    margin-top: 30px
+
+@media screen and (max-width: 1200px)
+  .header
+    max-height: 793px
+  .header_under-line
+    height: 274px
+    margin-top: -125px
+  .header_photo-block
+    max-width: 45%
+  .header_main-photo
+    display: none
+  .header_main-photo-1200
+    display: block
+    margin-top: 0
+  .header_low-screen-block
+    top: -55px
+    right: -30px
+    img
+      height: 155px
+      width: 189px
+
+@media screen and (max-width: 1110px)
+  .header_main-photo
+    margin-left: -40%
+
+@media screen and (max-width: 1000px)
+  .header-info
+    margin-left: 10px
+
+
+$gradient-angle: 292deg
+$gradient-start-color: #120C18
+$gradient-end-color: #1F1826
+.header_low-screen-block-mobile
+  display: none
+
+@media screen and (max-width: 959px)
+  .header
+    height: 1300px
+    max-height: 1200px
+    background: linear-gradient(#{$gradient-angle}, #{$gradient-start-color} 61.6%, #{$gradient-end-color} 88.9%)
+    img
+      position: absolute
+  .header_main-content
+    position: static
+    flex-direction: column
+
+  .header_photo-block
+    height: 600px
+    max-width: none
+    img
+      margin: 0
+  .header_main-photo-1200
+    object-fit: cover
+    height: 800px !important
+    transform: translateX(-60%)
+    left: 50%
+  .header_under-line
+    display: block
+    width: 130%
+    height: 114px
+  .header_low-screen-block
+    display: none
+    img
+      position: static
+  .header_low-screen-block-mobile
+    gap: 11px
+    display: flex !important
+.n1
+  left: -20px
+  top: 80px
+  z-index: -1
+.n2
+  top: 122px
+  right: 0
+
+@media screen and (max-width: 768px)
+  .header_under-line
+    width: 150%
+    margin-top: -96px
+    right: -87px
+
+@media screen and (max-width: 640px)
+
+  .header-480
+    display: none
+  .header-info
+    margin-left: 0
+    padding: 0 34px
+  .header_main-photo-1200
+    transform: translateX(-57%)
+  .header_title
+    white-space: nowrap
+  .header_subtitle
+    font-size: 15px
+    line-height: 27px
+    span
+      font-size: 15px
+      line-height: 27px
+  .numbers
+    gap: 70px
+  .numbers-block
+    h2
+      color: #8E52FF
+      font-family: Steelfish
+      font-size: 78.097px
+      font-style: normal
+      font-weight: 800
+      line-height: 87.883px
+      text-transform: uppercase
+    p
+      color: #BA95FF
+      font-family: Manrope
+      font-size: 10.986px
+      font-style: normal
+      font-weight: 400
+      line-height: 17.065px
+  .header_low-screen-block
+    display: none
+    img
+      width: 156px
+      height: 128px
+      position: static
+  .n1
+    left: 7px
+    top: 120px
+  .n2
+    right: -13px
+    top: 154px
+
+@media screen and (max-width: 479px)
+  .header
+    height: 950px
+  .header_under-line
+    margin-top: -281px
+    right: -33px
+    width: 150%
+  .header-info
+    padding: 0 10px
+    margin-top: 44px
+  .header_title
+    color: #FFF
+    text-align: center
+    font-family: Steelfish
+    font-size: 95.117px
+    font-style: normal
+    font-weight: 800
+    line-height: 107.035px
+    text-transform: uppercase
+    span
+      color: #8553E3
+      font-family: Steelfish
+      font-size: 91.071px
+      font-style: normal
+      font-weight: 400
+      line-height: 107.035px
+      text-transform: uppercase
+  .header_subtitle
+    font-size: 14px
+    span
+      font-size: 14px
+  .numbers-block
+    h2
+      color: #8E52FF
+      font-family: Steelfish
+      font-size: 67.136px
+      font-style: normal
+      font-weight: 800
+      line-height: 75.549px
+      text-transform: uppercase
+    p
+      color: #BA95FF
+      font-family: Manrope
+      font-size: 13px
+      font-style: normal
+      font-weight: 400
+      line-height: 17px
+  .header_main-photo-1200
+    height: 550px !important
+  .header_link
+    font-size: 30px
+  .header_low-screen-block-mobile
+    img
+      width: 120px
+      height: 98px
+  .n1
+    top: 69px
+    left: -5px
+  .n2
+    right: -30px
+    top: 116px
+
+////////main
+.wrapper
+  max-width: 1280px
+  margin: 60px auto
+  padding: 0 60px
+
+.crypto-table
+  display: flex
+  flex-direction: column
+
+.success-info
+  display: flex
+  justify-content: space-between
+  flex-basis: 100%
+  gap: 32px
+  span
+    width: 100%
+    display: flex
+    justify-content: space-between
+    border: 1px solid #8553E3
+    padding: 25px
+    h2
+      margin: 0
+      color: #BA95FF
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 400
+      line-height: 25.3px
+    p
+      margin: 0
+      color: #8E52FF
+      font-family: Steelfish
+      font-size: 45.829px
+      font-style: normal
+      font-weight: 800
+      line-height: 51.572px
+      text-transform: uppercase
+
+.crypto-table-desc
+  display: flex
+  flex-direction: row
+  gap: 11px
+  align-items: center
+  justify-content: end
+  p
+    margin: 0
+    color: #DBDBDB
+    text-align: center
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 300
+    line-height: 33.287px
+.table-slide
+  position: relative
+
+.table-content
+  display: flex
+  flex-direction: column
+  gap: 18px
+  margin-top: 29px
+
+.mt-link
+  align-self: center
+  max-width: 268px
+  margin-top: 29px
+  color: #AB7EDF
+  font-family: Manrope
+  font-size: 18px
+  font-style: normal
+  font-weight: 500
+  line-height: 19.3px
+
+.table-slide
+  overflow: hidden
+
+.table-heading
+  max-height: 75px
+  display: flex
+  justify-content: space-between
+  align-content: center
+  align-items: center
+  padding: 28px 27px
+  background-color: #8553E3
+  h2
+    margin: 0
+    color: #FFF
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 19.3px
+.table-stats
+  overflow: hidden
+  width: 100%
+  display: grid
+  border: 1px solid #8553E3
+  .table-ct
+    justify-content: space-between
+    gap: 19px
+    padding: 41px 44px
+    display: grid
+    grid-template-columns: repeat(4, 184px)
+  li
+    list-style: none
+    color: #FFF
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 19.3px
+    span
+      margin-left: 47px
+      color: #8553E3
+      text-align: right
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 19.3px
+.animate-list
+  display: grid
+  grid-template-rows: 0fr
+  transition: 0.5s
+  &[data-open="true"]
+    grid-template-rows: 1fr
+.dropdown-table
+  transform: rotate(-90deg)
+  transition: 0.5s
+  &[data-open="true"]
+    transform: rotate(0deg)
+
+
+
+@media screen and (max-width: 1200px)
+  .wrapper
+    padding: 0 10px
+
+  .success-info
+    span
+      padding: 25px 20px
+
+@media screen and (max-width: 960px)
+  .crypto-table-desc
+    margin-bottom: 23px
+    justify-content: center
+  .success-info
+    flex-direction: column
+    gap: 15px
+    span
+      padding: 23px 20px
+  .table-content
+    gap: 15px
+  .table-ct
+    padding: 45px 74px 37px !important
+    justify-content: space-between !important
+    grid-template-columns: repeat(2, 184px) !important
+@media screen and (max-width: 640px)
+  .crypto-table-desc
+    p
+      font-size: 14px
+  .success-info
+    span
+      padding: 25px 20px
+      h2
+        transform: translateY(10%)
+        font-size: 14px
+        font-style: normal
+        font-weight: 400
+        line-height: 20px
+      p
+        color: #8E52FF
+        text-align: right
+        font-family: Steelfish
+        font-size: 35.83px
+        font-style: normal
+        font-weight: 800
+        line-height: 51.572px
+        text-transform: uppercase
+  .table-content
+    gap: 9px
+  .table-ct
+    padding: 41px 61px 36px 29px !important
+    justify-content: space-between !important
+    grid-template-columns: repeat(2, 136px) !important
+    li
+      font-size: 14px
+      span
+        font-size: 14px
+        margin-left: 29px
+  .mt-link
+    font-size: 14px
+
+@media screen and (max-width: 480px)
+  .table-ct
+    padding: 26px 61px 36px 29px !important
+    justify-content: center !important
+    grid-template-columns: repeat(1, 136px) !important
+    li
+      font-size: 14px
+      span
+        font-size: 14px
+        margin-left: 29px
+
+////////////////
+.club-wrapper
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  padding-top: 43px
+  justify-content: center
+  gap: 43px
+  margin-top: 0
+
+.club-for
+  overflow: hidden
+  height: 885px
+  //background-image: url("../../images/dist/club-background.png")
+  background-size: contain
+  position: relative
+  z-index: 0
+  background: linear-gradient(135deg, #160F1E 48.75%, #220F34 82.95%), #160F1E
+.club-for::after
+  top: 400px
+  z-index: -1
+  display: block
+  position: absolute
+  background-repeat: no-repeat
+  opacity: 0.5
+  content: ''
+  width: 100%
+  height: 100%
+  background-image: url("../../images/dist/club-background.png")
+.club-card
+  overflow: hidden
+  padding: 23px 50px
+  border-radius: 10px
+  width: 350px
+  height: 703px
+  background-size: cover
+  position: relative
+  h2
+    margin: 0
+    position: relative
+    z-index: 1
+    color: #FFF
+    text-align: center
+    font-family: Steelfish
+    font-size: 61.272px
+    font-style: normal
+    font-weight: 800
+    line-height: 78.9px
+    text-transform: uppercase
+  img
+    top: 0
+    left: 0
+    position: absolute
+.club-card-img-1200
+  display: none
+.club-card-img-960
+  display: none
+.club-card-img-640
+  display: none
+.club-card-img-480
+  display: none
+.club-blocks-container
+  display: grid
+  grid-template-columns: repeat(2, 357px)
+  gap: 42px
+.club-block
+  display: block
+  position: relative
+  svg
+    width: 100%
+  p
+    right: 0
+    position: absolute
+    color: #8553E3
+    text-align: right
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 25.3px
+  h2
+    top: 63px
+    position: absolute
+    left: 20px
+    color: #D4BDFF
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 400
+    line-height: 25.3px
+    span
+      color: #FFF
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 25.3px
+
+@media screen and (max-width: 1280px)
+  .club-wrapper
+    padding: 43px 10px
+
+
+@media screen and (max-width: 1200px)
+  .club-card-img-1920
+    display: none
+  .club-card-img-1200
+    display: block
+  .club-for
+    height: auto
+  .club-wrapper
+    flex-direction: column
+    gap: 55px
+  .club-card
+    align-self: center
+    width: 757px
+    height: 169px
+    background-size: 100%
+    background-repeat: no-repeat
+    background-position: right
+    padding: 54px 58px
+    h2
+      text-align: start
+
+  .club-blocks-container
+    grid-template-columns: repeat(2, 357px)
+    justify-content: center
+
+
+@media screen and (max-width: 960px)
+  .club-card-img-1200
+   display: none
+  .club-card-img-960
+    display: block
+  .club-card
+    padding: 54px 28px
+    max-width: 619px
+    h2
+      color: #FFF
+      font-family: Steelfish
+      font-size: 47.475px
+      font-style: normal
+      font-weight: 800
+      line-height: 61.134px
+  .club-blocks-container
+    gap: 35px
+    margin: 0 auto
+    max-width: 757px
+    grid-template-columns: repeat(2, 291px)
+    justify-content: space-between
+  .club-block
+    p
+    h2
+      top: 30%
+      margin: 0
+      color: #D4BDFF
+      font-family: Manrope
+      font-size: 14.719px
+      font-style: normal
+      font-weight: 400
+      line-height: 20.688px
+      span
+        color: #FFF
+        font-family: Manrope
+        font-size: 14.719px
+        font-style: normal
+        font-weight: 500
+        line-height: 20.688px
+
+@media screen and (max-width: 640px)
+  .club-wrapper
+    gap: 53px
+  .club-card-img-960
+    display: none
+  .club-card-img-640
+    width: 100%
+    display: block
+  .club-blocks-container
+    grid-template-columns: repeat(1, 291px)
+  .club-card
+    height: auto
+    max-width: none
+    width: 100%
+    padding: 32px 18px
+    h2
+      margin: 0
+      color: #FFF
+      font-family: Steelfish
+      font-size: 37.48px
+      font-style: normal
+      font-weight: 800
+      line-height: 61.134px
+      text-transform: uppercase
+
+.club-card320-br
+  display: none
+
+@media screen and (max-width: 480px)
+  .club-card320-br
+    display: block
+  .club-card-img-640
+    display: none
+  .club-card-img-480
+    object-fit: cover
+    height: 100%
+    width: 100%
+    display: block
+  .club-wrapper
+    gap: 28px
+  .club-card
+    padding: 28px 20px
+  .club-card
+    h2
+      color: #FFF
+      font-family: Steelfish
+      font-size: 30px
+      font-style: normal
+      font-weight: 800
+      line-height: 34.1px
+      text-transform: uppercase
+
+.rc-show
+  overflow: hidden
+  padding: 30px 60px
+  background: linear-gradient(92deg, #8553E3 48.09%, #A170FC 101.93%)
+
+.rc-show-wrapper
+  max-width: 1171px
+  align-items: center
+  padding: 26px 54px
+  display: flex
+  flex-direction: row
+  gap: 69px
+  margin: 0 auto
+  border: 1px solid #B395EB
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.40) -8.74%, rgba(133, 83, 227, 0.00) 9.61%, rgba(133, 83, 227, 0.00) 90.09%, rgba(255, 255, 255, 0.50) 109.13%)
+  h2
+    margin: 0
+    min-width: 365px
+    color: #FFF
+    text-align: center
+    font-family: Steelfish
+    font-size: 115.635px
+    font-style: normal
+    font-weight: 800
+    line-height: 130.124px
+    text-transform: uppercase
+    span
+      color: #FFF
+      font-family: Steelfish
+      font-size: 110.717px
+      font-style: normal
+      font-weight: 400
+      line-height: 130.124px
+      text-transform: uppercase
+  p
+    margin: 0
+    color: #DBDBDB
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 400
+    line-height: 30.3px
+.strong-text
+  color: #FFF
+  font-family: Manrope
+  font-size: 18px
+  font-style: normal
+  font-weight: 600
+  line-height: 30.3px
+.light-text
+  color: #FFF
+  font-family: Manrope
+  font-size: 18px
+  font-style: normal
+  font-weight: 400
+  line-height: 30.3px
+
+@media screen and (max-width: 1200px)
+  .rc-show
+    padding: 30px 10px
+
+  .rc-show-wrapper
+    gap: 44px
+    padding: 11px 30px
+    p
+      color: #DBDBDB
+      font-family: Manrope
+      font-size: 16px
+      font-style: normal
+      font-weight: 400
+      line-height: 27.3px
+  .strong-text
+    color: #FFF
+    font-family: Manrope
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 27.3px
+  .light-text
+    color: #FFF
+    font-family: Manrope
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 27.3px
+
+@media screen and (max-width: 960px)
+  .rc-show-wrapper
+    flex-direction: column
+    align-items: flex-start
+    padding: 20px 32px
+    p
+      max-width: 520px
+
+@media screen and (max-width: 640px)
+  .rc-show-wrapper
+    padding: 15px 41px
+    gap: 15px
+    h2
+      text-align: start
+      color: #FFF
+      font-family: Steelfish
+      font-size: 82.053px
+      font-style: normal
+      font-weight: 800
+      line-height: 92.335px
+      text-transform: uppercase
+      span
+        color: #FFF
+        font-family: Steelfish
+        font-size: 78.563px
+        font-style: normal
+        font-weight: 400
+        line-height: 92.335px
+        text-transform: uppercase
+  .strong-text
+    color: #FFF
+    font-family: Manrope
+    font-size: 14px
+    font-style: normal
+    font-weight: 600
+    line-height: 20px
+  .light-text
+    color: #FFF
+    font-family: Manrope
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+
+@media screen and (max-width: 480px)
+  .rc-show
+    padding: 21px 10px
+  .rc-show-wrapper
+    padding: 18px 13px
+    h2
+      color: #FFF
+      font-family: Steelfish
+      font-size: 59.243px
+      font-style: normal
+      font-weight: 800
+      line-height: 66.666px
+      text-transform: uppercase
+      span
+        color: #FFF
+        font-family: Steelfish
+        font-size: 56.723px
+        font-style: normal
+        font-weight: 400
+        line-height: 66.666px
+        text-transform: uppercase
+
+//////////////
+.community
+
+.community_title
+  color: #FFF
+  font-family: Steelfish
+  font-size: 47.534px
+  font-style: normal
+  font-weight: 800
+  line-height: 61.209px
+  text-transform: uppercase
+
+.community_table
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: 328px 272px
+
+.community_table-container
+  display: flex
+  justify-content: center
+  align-items: center
+  border: 1px solid #8553E3
+  span
+    display: flex
+    gap: 20px
+    flex-direction: column
+    align-items: center
+    img
+      max-height: 135px
+    .__min
+      width: 151px
+    .__imge
+      max-height: none
+    p
+      margin: 0
+      color: #FFF
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 600
+      line-height: 33.287px
+.community_table-container:nth-child(3)
+  span
+    max-width: 301px
+    gap: 23px
+
+.community_table-container:nth-child(6)
+  position: relative
+  border: none
+  .__content
+    width: 331px
+    height: 209px
+    gap: 8px
+    position: absolute
+    padding: 15px 25px 20px
+    transform: rotate(1.964deg)
+    h2
+      align-self: start
+      margin: 0
+      color: #DBDBDB
+      font-family: Manrope
+      font-size: 20.397px
+      font-style: normal
+      font-weight: 600
+      line-height: 34.336px
+    p
+      margin: 0
+      color: #DBDBDB
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 300
+      line-height: 30.3px
+    a
+      color: #8553E3
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 600
+      line-height: 30.3px
+      text-decoration-line: underline
+    .svg
+      background-color: #8553E3
+      padding: 10px 11px
+      border-radius: 50%
+      position: absolute
+      right: 14px
+
+@media screen and (max-width: 1199px)
+  .community_title
+    text-align: center
+  .community_table
+    grid-template-columns: 2fr 3fr 3fr
+  .community_table-container:nth-child(6)
+    position: relative
+    border: none
+    .__content
+      width: 314px
+      height: 198px
+      gap: 8px
+      position: absolute
+      padding: 30px 20px 20px
+      transform: rotate(1.964deg)
+      h2
+        color: #DBDBDB
+        font-family: Manrope
+        font-size: 19.372px
+        font-style: normal
+        font-weight: 600
+        line-height: 32.609px
+      p
+        color: #DBDBDB
+        font-family: Manrope
+        font-size: 17.095px
+        font-style: normal
+        font-weight: 300
+        line-height: 28.777px
+      a
+        color: #8553E3
+        font-family: Manrope
+        font-size: 17.095px
+        font-style: normal
+        font-weight: 600
+        line-height: 28.777px
+        text-decoration-line: underline
+
+
+@media screen and (max-width: 959px)
+  .community_table
+    grid-template-columns: 1fr 1fr
+  .community_table-container
+    span
+      p
+        max-width: 225px
+        color: #FFF
+        font-family: Manrope
+        font-size: 14px
+        font-style: normal
+        font-weight: 600
+        line-height: 20px
+      .__imge
+        max-width: 250px
+      .__content
+        height: 171px !important
+        gap: 5px !important
+        padding: 11px 18px !important
+        width: 220px !important
+        h2
+          font-size: 14.303px !important
+          font-style: normal !important
+          font-weight: 600 !important
+          line-height: 24.076px !important
+        p
+          font-size: 12.622px !important
+          font-style: normal !important
+          font-weight: 300 !important
+          line-height: 21.246px !important
+        a
+          font-size: 12.622px !important
+          font-style: normal !important
+          font-weight: 600 !important
+          line-height: 21.246px !important
+        .svg
+          padding: 5px 7px !important
+          right: -5px !important
+
+
+@media screen and (max-width: 639px)
+  .community_table
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(6, 300px)
+  .community_wrapper
+    padding: 0
+  .community_table-container
+    border-top: none
+    border-right: none
+    border-left: none
+//////////
+.video_block
+  position: relative
+  padding: 41px
+  display: flex
+  gap: 70px
+  background-color: #8553E3
+  iframe
+    width: 585px
+    height: 394px
+
+.video_block_description
+  display: flex
+  flex-direction: column
+  gap: 29px
+  h2
+    margin: 0
+    color: #FFF
+    font-family: Steelfish
+    font-size: 47.534px
+    font-style: normal
+    font-weight: 800
+    line-height: 61.209px
+    text-transform: uppercase
+  div
+    display: flex
+    flex-direction: column
+    gap: 22px
+    p
+      position: relative
+      margin: 0
+      color: #FFF
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 25.3px
+    p:before
+      content: '/'
+      display: block
+      position: absolute
+      left: -10px
+      top: -10px
+      transform: rotate(25deg)
+.video_block_under
+  position: absolute
+  bottom: -11px
+  background-color: #4D2E87
+  left: 41px
+  z-index: -1
+  width: 1078px
+  height: 40px
+
+@media screen and (max-width: 1199px)
+  .video_block
+    gap: 49px
+    iframe
+      width: 50%
+      height: 292px
+  .video_block_under
+    width: 95%
+
+@media screen and (max-width: 959px)
+  .video_block
+    padding: 33px
+    gap: 40px
+    flex-direction: column
+    align-items: center
+    iframe
+      width: 100%
+      height: 374px
+  .video_block_description
+    div
+      padding: 0 28px
+      display: grid
+      gap: 50px
+      grid-template-columns: 1fr 1fr
+      p
+        font-size: 16px
+        line-height: 20px
+  .video_block_under
+    left: 33px
+    width: 93%
+
+@media screen and (max-width: 639px)
+  .video_block
+    padding: 36px 24px
+    gap: 31px
+  .video_block_description
+    width: 100%
+    div
+      gap: 23px
+      padding: 0
+      grid-template-columns: 1fr
+  .video_block_under
+    left: 24px
+    width: 89%
+
+@media screen and (max-width: 479px)
+  .video_block
+    padding: 17px 13px
+    gap: 17px
+  .video_block_description
+    gap: 20px
+    h2
+      color: #FFF
+      font-family: Steelfish
+      font-size: 34.75px
+      font-style: normal
+      font-weight: 800
+      line-height: 39.074px
+      text-transform: uppercase
+    div
+      gap: 18px
+      p
+        color: #FFF
+        font-family: Manrope
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 20px
+      p::before
+        top: -11px
+        left: -1px
+
+/////////////
+.resident-wrapper
+  padding: 0 112px 85px
+  margin-top: 34px
+  margin-bottom: 0
+  flex-direction: column
+  display: flex
+
+  a
+    background-color: #160F1E
+    padding: 10px 15px
+    align-self: center
+    text-decoration: none
+    color: #FFF
+    font-family: Steelfish
+    font-size: 34.772px
+    font-style: normal
+    font-weight: 800
+    line-height: 39.129px
+    text-transform: uppercase
+.resident-block
+  margin-bottom: -1px
+  background: linear-gradient(-2deg,#8553e3 90%,transparent 10%)
+  h2
+    padding: 82px 0 0
+    margin: 0
+    color: #FFF
+    text-align: center
+    font-family: Steelfish
+    font-size: 62.244px
+    font-style: normal
+    font-weight: 800
+    line-height: 80.152px
+    text-transform: uppercase
+.swiper
+  max-width: 340px
+.resident-main-content
+  display: flex
+.swiper-wrapper
+  max-height: 486px
+.swiper-btn-nxt
+  transform: rotate(180deg)
+.swiper-img
+  width: 100%
+  object-fit: cover
+.swiper-buttons
+  margin-top: 18px
+  display: flex
+  justify-content: center
+.swiper-dots
+  display: flex
+  justify-content: center
+  max-width: 150px
+  .swiper-pagination-bullet-active
+    background-color: #573991
+
+  .swiper-pagination-bullet
+    background-color: #DBC8FF
+.resident-cards
+  display: flex
+  flex-direction: column
+  gap: 13px
+.resident-card
+  background-color: #FFF
+  display: flex
+  border-radius: 14px
+  max-width: 672px
+  img
+    border-radius: 12.687px
+    background-color: #8553E3
+  p
+    align-self: center
+    margin: 0 0 0 33px
+    max-width: 282px
+    color: #160F1E
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 500
+    line-height: 25.3px
+
+@media screen and (max-width: 1280px)
+  .resident-block
+    background: linear-gradient(-3deg,#8553e3 93%,transparent 0)
+  .resident-wrapper
+    padding: 0 60px 85px
+
+@media screen and (max-width: 1200px)
+  .resident-main-content
+    justify-content: center
+  .swiper
+    margin-right: 0 !important
+    margin-left: 12px !important
+  .resident-wrapper
+    padding: 0 12px 60px
+  .resident-cards
+    flex-direction: row
+  .resident-card
+    max-height: 486px
+    max-width: 303px
+    flex-direction: column
+    p
+      margin: 0
+      padding: 20px 20px 40px
+
+
+@media screen and (max-width: 1000px)
+  .swiper-wrapper
+    width: 303px !important
+    height: auto !important
+  .resident-card
+    max-height: 439px
+    p
+      color: #160F1E
+      font-family: Manrope
+      font-size: 16.421px
+      font-style: normal
+      font-weight: 500
+      line-height: 23.081px
+  .swiper-img
+    width: auto
+
+
+@media screen and (max-width: 959px)
+  .resident-wrapper
+    margin-top: 26px
+    a
+      margin-top: 45px
+  .resident-block
+    background: linear-gradient(-3deg,#8553e3 96%,transparent 0)
+    h2
+      font-size: 54px
+  .resident-main-content
+    gap: 26px
+    align-items: center
+    flex-direction: column
+.resident-block-639
+  display: none
+@media screen and (max-width: 639px)
+  .resident-block-639
+    display: block
+  .swiper
+    margin-left: 0 !important
+  .resident-cards
+    gap: 18px
+    flex-direction: column
+  .resident-main-content
+    gap: 18px
+  .resident-block
+    background: linear-gradient(-2deg,#8553e3 98%,transparent 0)
+    h2
+      padding-top: 82px
+      color: #FFF
+      text-align: center
+      font-family: Steelfish
+      font-size: 37.53px
+      font-style: normal
+      font-weight: 800
+      line-height: 41.2px
+      text-transform: uppercase
+////////////////////////////////
+.radan-block
+  //background: linear-gradient(to top, black 0%, black 0%, #8553e3 1%)
+  display: flex
+  justify-content: center
+  flex-direction: column
+  align-items: center
+  background-color: #8553e3
+  padding-top: 90px
+  overflow: hidden
+.radan-wrapper
+  position: relative
+  width: 1178px
+  padding: 0 87px 50px
+  border: 2px solid #8553E3
+  background-color: #9963FF
+  margin: 0
+  display: flex
+  .dima-radan
+    top: -64px
+    height: 591px
+    width: 533px
+    right: 33px
+    position: absolute
+    object-fit: cover
+    max-width: 578px
+  .stats-screen
+    position: absolute
+    width: 240px
+    right: 0
+    bottom: 70px
+  .graph-screen
+    position: absolute
+    right: -16%
+    top: 10%
+.radan_description
+  width: 552px
+  span
+    margin-top: 50px
+    display: flex
+    gap: 27px
+    align-items: center
+    h2
+      color: #FFF
+      font-family: Steelfish
+      font-size: 102.748px
+      font-style: normal
+      font-weight: 800
+      line-height: 132.309px
+      text-transform: uppercase
+    p
+      color: #FFF
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 600
+      line-height: 25.3px
+.exp-block
+  display: grid
+  gap: 20px
+  grid-template-columns: 322px 1fr 1fr
+  h2
+    white-space: nowrap
+    margin: 0
+    padding: 11px 27px
+    border: 2px solid #FFF
+    color: #FFF
+    text-align: center
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 600
+    line-height: 25.3px
+  h2:nth-child(3)
+    max-width: 401px
+    grid-column-start: 1
+    grid-column-end: 3
+.radan_description_subtitle
+  margin: 0
+  position: relative
+  color: #FFF
+  font-family: Manrope
+  font-size: 18px
+  font-style: normal
+  font-weight: 600
+  line-height: 30.3px
+  &:before
+    content: '/'
+    display: block
+    position: absolute
+    left: -10px
+    top: -3px
+  span
+    margin: 0
+    color: #FFF
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 700
+    line-height: 30.3px
+
+.radan_description_cont
+  margin-top: 37px
+  display: flex
+  flex-direction: column
+  gap: 25px
+
+.radan-block_bottom
+  position: relative
+  width: 100%
+  margin-top: -45px
+
+@media screen and (max-width: 1200px)
+  .radan-wrapper
+    width: 98%
+    .dima-radan
+      right: -25px
+
+.dima-radan2
+  display: none
+
+@media screen and (max-width: 1100px)
+  .radan-wrapper
+    padding: 0 35px 60px
+    .dima-radan
+      display: none
+    .dima-radan2
+      display: block
+    .stats-screen
+      right: 274px
+      top: 205px
+.desc-960
+  display: none
+@media screen and (max-width: 959px)
+  .desc-960
+    display: block
+  .radan-wrapper
+    padding: 0 23px 60px
+  .radan_description
+    span
+      h2
+        color: #FFF
+        text-align: center
+        font-family: Steelfish
+        font-size: 79.45px
+        font-style: normal
+        font-weight: 800
+        line-height: 102.309px
+        text-transform: uppercase
+      p
+        color: #FFF
+        font-family: Manrope
+        font-size: 14px
+        font-style: normal
+        font-weight: 600
+        line-height: 18.3px
+  .exp-block
+    h2
+      padding: 10px 13px
+      color: #FFF
+      text-align: center
+      font-family: Manrope
+      font-size: 14px
+      font-style: normal
+      font-weight: 600
+      line-height: 25.3px
+  .radan_description_cont
+    margin-top: 28px
+    gap: 30px
+    p
+      line-height: normal
+      font-size: 14px
+    span
+      color: #FFF
+      font-family: Manrope
+      font-size: 14px
+      font-style: normal
+      font-weight: 700
+      line-height: 20px
+.dima-radan3
+  display: none
+@media screen and (max-width: 959px)
+  .exp-block
+    gap: 10px
+    grid-template-columns: 236px 83px 1fr
+    h2:nth-child(3)
+      max-width: 315px
+
+  .radan_description-1920
+    display: none
+  .dima-radan2
+    display: none !important
+  .dima-radan3
+    right: 0 !important
+    height: 550px!important
+    width: 375px!important
+    display: block !important
+  .graph-screen
+    right: -27%!important
+    top: 25% !important
+  .stats-screen
+    right: 224px !important
+    top: 240px !important
+
+@media screen and (max-width: 885px)
+  .radan-block_bottom
+   margin-top: -40px
+@media screen and (max-width: 670px)
+  .dima-radan3
+    right: -50px !important
+
+
+@media screen and (max-width: 639px)
+  .radan_description
+    width: 100%
+    span
+  .radan-wrapper
+    max-height: 653px
+    flex-direction: column
+  .dima-radan3
+    top: -35px !important
+    position: relative !important
+  .stats-screen
+    right: 367px!important
+    top: 394px!important
+  .graph-screen
+    top: 47% !important
+    right: -14% !important
+    width: 200px
+
+@media screen and (max-width: 459px)
+  .graph-screen
+    width: 172px
+  .dima-radan3
+    transform: translateX(-29%)
+  .radan-wrapper
+    padding: 0 10px
+  .radan_description_subtitle
+    span
+      margin: 0 !important
+  .radan_description
+    span
+      gap: 12px
+      margin-top: 32px
+      p
+        color: #FFF
+        font-family: Manrope
+        font-size: 14px
+        font-style: normal
+        font-weight: 600
+        line-height: 18.3px
+      h2
+        color: #FFF
+        text-align: center
+        font-family: Steelfish
+        font-size: 57.646px
+        font-style: normal
+        font-weight: 800
+        line-height: 74.231px
+        text-transform: uppercase
+  .radan-wrapper
+    max-height: 664px
+  .radan_description_cont
+    gap: 5px
+  .exp-block
+    display: flex
+    flex-direction: column
+    h2
+      color: #FFF
+      text-align: center
+      font-family: Manrope
+      font-size: 14px
+      font-style: normal
+      font-weight: 600
+      line-height: 25.3px
+      padding: 5px 10px
+    h2:nth-child(1)
+      max-width: 229px
+    h2:nth-child(2)
+      order: 3
+      max-width: 83px
+    h2:nth-child(3)
+      width: 100%
+  .graph-screen
+    top: 31% !important
+.questionnaire-wrapper
+  padding: 0
+  max-width: 1178px
+  position: relative
+  margin-top: -70px
+.questionnaire
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  border: 1px solid #8553E3
+  border-top: none
+  padding: 70px 100px
+.questionnaire_desc
+  display: flex
+  flex-direction: row
+  gap: 23px
+  svg
+    transform: translateY(10px)
+.questionnaire_inf
+  h2
+    margin: 0
+    color: #FFF
+    font-family: Steelfish
+    font-size: 47px
+    font-style: normal
+    font-weight: 800
+    line-height: normal
+    text-transform: uppercase
+  p
+    margin: 0
+    color: #FFF
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 600
+    line-height: 25.3px
+.questionnaire_list
+  margin-top: 38px
+  display: flex
+  flex-direction: column
+  gap: 20px
+  list-style: none
+  li
+    color: #B6ACC1
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 400
+    line-height: 26.3px
+    position: relative
+    span
+      color: #FFF
+      font-family: Manrope
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: 26.3px
+    &::before
+      left: -15px
+      top: -3px
+      position: absolute
+      content: url("../../images/dist/list-style.png")
+.questionnaire_screen
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  align-self: center
+  width: 391px
+  height: 243px
+  background-color: #603CA3
+  h2
+    margin: 0
+    color: #3F286A
+    font-family: Steelfish
+    font-size: 47.534px
+    font-style: normal
+    font-weight: 800
+    line-height: 61.209px
+    text-transform: uppercase
+  a
+    bottom: -15px
+    position: absolute
+    text-decoration: none
+    color: #FFF
+    font-family: Steelfish
+    font-size: 34.772px
+    font-style: normal
+    font-weight: 800
+    line-height: 39.129px
+    text-transform: uppercase
+    padding: 10px 85px
+    background-color: #8553E3
+@media screen and (max-width: 1188px)
+  .questionnaire-wrapper
+    padding: 0 10px
+  .questionnaire
+    padding: 70px 36px
+
+
+@media screen and (max-width: 959px)
+  .questionnaire_inf
+    h2
+      color: #FFF
+      font-family: Steelfish
+      font-size: 30.556px
+      font-style: normal
+      font-weight: 800
+      line-height: 50.445px
+      text-transform: uppercase
+    p
+      color: #FFF
+      font-family: Manrope
+      font-size: 14px
+      font-style: normal
+      font-weight: 600
+      line-height: 20px
+  .questionnaire_desc
+    svg
+      transform: translateY(16px)
+  .questionnaire_list
+    li
+      color: #B6ACC1
+      font-family: Manrope
+      font-size: 14px
+      font-style: normal
+      font-weight: 400
+      line-height: 20px
+      span
+        color: #FFF
+        font-family: Manrope
+        font-size: 14px
+        font-style: normal
+        font-weight: 500
+        line-height: 20px
+  .questionnaire_screen
+    max-width: 350px
+    max-height: 200px
+
+@media screen and (max-width: 750px)
+  .questionnaire_inf
+    h2
+      white-space: nowrap
+  .questionnaire
+    padding: 75px 28px 37px
+    gap: 32px
+  .questionnaire_screen
+    a
+      color: #FFF
+      font-family: Steelfish
+      font-size: 26.079px
+      font-style: normal
+      font-weight: 800
+      line-height: 29.346px
+      text-transform: uppercase
+      padding: 10px 60px
+@media screen and (max-width: 639px)
+  .questionnaire-cont
+    display: flex
+    flex-direction: column
+    justify-content: center
+    .questionnaire_desc
+      justify-content: center
+    .questionnaire_list
+      align-self: center
+      max-width: 261px
+      justify-content: center
+  .questionnaire
+    flex-direction: column
+  .questionnaire_screen
+    max-width: 254px
+    h2
+      color: #3F286A
+      font-family: Steelfish
+      font-size: 30.907px
+      font-style: normal
+      font-weight: 800
+      line-height: 39.799px
+      text-transform: uppercase
+    a
+      display: none
+
+
+
+@media screen and (max-width: 480px)
+  .questionnaire
+    border: none
+    padding: 80px 0 40px
+
+.crypto-table_dark
+
+.table-slide_dark
+.table-heading_dark
+  background-color: #402A68
+.table-request
+  background-color: #2F1E4F
+  padding: 31px 57px
+  h2
+    color: #D5BEFF
+    font-family: Manrope
+    font-size: 18px
+    font-style: normal
+    font-weight: 600
+    line-height: 27.3px
+
+@media screen and (max-width: 1199px)
+  .table-request
+    padding: 31px 47px
+
+@media screen and (max-width: 959px)
+  .table-request
+    padding: 35px 30px 22px
+    h2
+      color: #D5BEFF
+      font-family: Manrope
+      font-size: 15px
+      font-style: normal
+      font-weight: 600
+      line-height: 27.3px
+  .table-heading_dark
+    h2
+      color: #D5BEFF
+      font-family: Manrope
+      font-size: 15px
+      font-style: normal
+      font-weight: 600
+      line-height: 19.3px
+
+@media screen and (max-width: 639px)
+  .table-heading_dark
+    .dropdown-table
+      padding-left: 10px
