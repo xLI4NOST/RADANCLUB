@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const slide = document.getElementById('slide-template').content
     const slideContainer = document.querySelector('.table-content')
 
-
-    const renderSlides = (array) => {
-        array.forEach(item => {
+    const nextSlidesButton = document.querySelector('.mt-link')
+    const renderSlides = (array , index) => {
+        let initialElems = array.slice(0, index)
+        initialElems.forEach(item => {
             const cloneSlide = document.importNode(slide, true);
             const tableTitle = cloneSlide.querySelector('.table_title');
             const statsList = cloneSlide.querySelector('.table-ct');
@@ -66,19 +67,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function renderNextElements(array) {
+        fetch('https://radanstats.writingeraser.ru/api/stats/months')
+            .then(x => x.json())
+            .then(x => {
+                slideContainer.innerHTML = ''
+                renderSlides(x, 6)
+            })
 
-    const pnl = document.querySelector('.PNL')
-    const deals = document.querySelector('.DEALS')
+    }
+
+    nextSlidesButton.addEventListener('click', renderNextElements)
+
+
+    const pnl = document.querySelectorAll('.PNL')
+    const deals = document.querySelectorAll('.DEALS')
 
     const updateStats = () => {
         fetch('https://radanstats.writingeraser.ru/api/stats/total')
             .then(x => x.json())
             .then(x => {
                 if (x.pnl) {
-                    pnl.textContent = '+' + x.pnl + '%'
+                    pnl.forEach(item => {
+                        item.textContent = '+' + x.pnl + '%'
+                    })
+
                 }
                 if (x.deals) {
-                    deals.textContent = x.deals
+                    deals.forEach(item => {
+                        item.textContent = x.deals
+                    })
+
                 }
             })
 
@@ -88,12 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://radanstats.writingeraser.ru/api/stats/months')
         .then(x => x.json())
         .then(x => {
-            renderSlides(x)
+            renderSlides(x, 3)
+
         })
 
     const faqSlide = document.querySelectorAll('.table-slide_dark')
 
-    faqSlide.forEach(slide=>{
+    faqSlide.forEach(slide => {
         const animateList = slide.querySelector('.animate-list');
         const dropDownArrow = slide.querySelector('.dropdown-table');
         dropDownArrow.addEventListener('click', () => {
@@ -104,8 +124,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })
 
+    const headerLink = document.querySelector('.header_link')
+    const residentButton = document.querySelector('.resident-button')
+
+
+    function scrollToCenterClub() {
+        const clubWrapper = document.querySelector('.club-wrapper')
+        if (clubWrapper) {
+            const yOffset = clubWrapper.getBoundingClientRect().top - window.innerHeight / 2 + clubWrapper.clientHeight / 2;
+            window.scrollTo({
+                top: yOffset,
+                behavior: 'smooth'
+            });
+        }
+    }
+    headerLink.addEventListener('click', scrollToCenterClub)
+
+
+    function scrollToQuestionare() {
+        const questionare = document.querySelector('.questionnaire-wrapper');
+        if (questionare) {
+            questionare.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function scrollToVideo (){
+        console.log('sdsdsdds')
+        const videoBlock = document.querySelector('.video_block')
+        if(videoBlock){
+            videoBlock.scrollIntoView({behavior:'smooth', block:'end'})
+        }
+    }
+
+    residentButton.addEventListener('click', scrollToQuestionare);
+    const watchButton = document.querySelector('.watch')
+    watchButton.addEventListener('click', scrollToVideo)
 
 
 
-
+    const closeIcon = document.querySelector('.close-icon')
+    const popup = document.querySelector('.form_to')
+    const questionary = document.querySelector('.questionary')
+    const openPopup =()=>{
+        popup.classList.add('form_active')
+    }
+    const closePopup =()=>{
+        popup.classList.remove('form_active')
+    }
+    questionary.addEventListener('click', openPopup)
+    closeIcon.addEventListener('click', closePopup)
 })

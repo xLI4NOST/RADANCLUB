@@ -393,6 +393,7 @@ $gradient-end-color: #1F1826
   margin-top: 29px
 
 .mt-link
+  cursor: pointer
   align-self: center
   max-width: 268px
   margin-top: 29px
@@ -402,6 +403,9 @@ $gradient-end-color: #1F1826
   font-style: normal
   font-weight: 500
   line-height: 19.3px
+
+.watch
+  cursor: pointer
 
 .table-slide
   overflow: hidden
@@ -434,6 +438,9 @@ $gradient-end-color: #1F1826
     display: grid
     grid-template-columns: repeat(4, 184px)
   li
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: row
     list-style: none
     color: #FFF
     font-family: Manrope
@@ -1243,6 +1250,9 @@ $gradient-end-color: #1F1826
     font-weight: 800
     line-height: 80.152px
     text-transform: uppercase
+
+.resident-button
+  padding: 10px 54px !important
 .swiper
   max-width: 340px
 .resident-main-content
@@ -1718,6 +1728,10 @@ $gradient-end-color: #1F1826
       position: absolute
       content: url("../images/dist/list-style.webp")
 .questionnaire_screen
+  background-image: url("../images/dist/que.webp")
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
   position: relative
   display: flex
   align-items: center
@@ -1725,8 +1739,8 @@ $gradient-end-color: #1F1826
   align-self: center
   width: 391px
   height: 243px
-  background-color: #603CA3
   h2
+    opacity: 0
     margin: 0
     color: #3F286A
     font-family: Steelfish
@@ -1736,7 +1750,8 @@ $gradient-end-color: #1F1826
     line-height: 61.209px
     text-transform: uppercase
   a
-    bottom: -15px
+    cursor: pointer
+    bottom: -5px
     position: absolute
     text-decoration: none
     color: #FFF
@@ -1834,9 +1849,6 @@ $gradient-end-color: #1F1826
       font-weight: 800
       line-height: 39.799px
       text-transform: uppercase
-    a
-      display: none
-
 
 
 @media screen and (max-width: 480px)
@@ -1888,3 +1900,34 @@ $gradient-end-color: #1F1826
   .table-heading_dark
     .dropdown-table
       padding-left: 10px
+
+
+.form_to
+  display: none
+  opacity: 0
+  width: 100%
+  padding: 10% 10%
+  height: 100% !important
+  background: rgba(0,0,0,.7)
+  z-index: 9
+  position: fixed
+  transition: 0.5s ease-in
+.form
+  top: 10%
+  position: absolute
+  z-index: 9
+
+.form_active
+  display: block
+  opacity: 1
+
+.close-icon
+  position: absolute
+  width: 40px
+  right: 10%
+  height: 40px
+@media screen and (max-width: 400px)
+  .close-icon
+    width: 30px
+    height: 30px
+
